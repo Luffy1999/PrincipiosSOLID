@@ -17,13 +17,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // declaraciï¿½n de inputs para el movimiento horizontal
+        // declaración de inputs para el movimiento horizontal
         float Hmove = Input.GetAxis("Horizontal");
 
-        // Programaciï¿½n del movimiento
+        // Programación del movimiento
         Vector2 _Direction = new Vector2(Hmove, 0f) * _PlayerSpeed * Time.deltaTime;
+        transform.Translate(_Direction);
 
-        // Programaciï¿½n del salto
+        // Programación del salto
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.AddForce(Vector2.up * _JumpForce);
